@@ -32,3 +32,33 @@ body {
   font-family: 'quicksandregular', cursive;
   font-size: 26px;
 }
+
+.will_paginate {
+  text-align: center;
+  padding: 20px;
+  cursor: default; }
+  .will_paginate a, .will_paginate span, .will_paginate em {
+    padding: 0.2em 0.5em; }
+  .will_paginate .disabled {
+    color: #aaaaaa; }
+  .will_paginate .current {
+    font-style: normal;
+    font-weight: bold;
+    color: #ff0084; }
+  .will_paginate a {
+    border: 1px solid #dddddd;
+    color: #7690BE;
+    text-decoration: none; }
+    .will_paginate a:hover, .will_paginate a:focus {
+      border-color: #F7B1BB;
+      background: #F7B1BB;
+      color: white; }
+  .will_paginate .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .will_paginate .previous_page, .will_paginate .next_page {
+    border-width: 2px; }
+  .will_paginate .previous_page {
+    margin-right: 1em; }
+  .will_paginate .next_page {
+    margin-left: 1em; }

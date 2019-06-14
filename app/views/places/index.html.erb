@@ -1,4 +1,6 @@
 <h1><%= @places.each do |place| %></h1>
+
+
   <div class="booyah-box col-10 offset-1">
     <h1><%= place.name %></h1>
     <i><%= place.address %></i><br /><br />
@@ -6,3 +8,7 @@
   </div>
 
 <% end %>
+
+<div class="will_paginate">
+  <%= will_paginate @place, renderer: BootstrapPagination::Rails, previous_label: "Previous Page", next_label: "Next Page", inner_window: "1", outer_window: "0" %>
+</div>
