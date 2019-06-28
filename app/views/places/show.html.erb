@@ -3,6 +3,10 @@
   <i><%= @place.address %></i>
   <br/><br/>
   <p><%= @place.description %></p>
+  <% @place.photos.each do |photo| %>
+    <%= image_tag photo.picture.url %>
+    <%= photo.caption %>
+  <% end %>
 
   </head>
   <body>
@@ -127,16 +131,3 @@
   </button>
 </div>
 
-<div class="clear"></div>
-
-<div class="row">
-  <% @place.photos.each do |photo| %>
-    <div class="col-12 col-sm-6">
-      <blockquote>
-        <%= image_tag photo.picture.url %>
-        <%= photo.caption %>
-        <small><%= comment.user.email %></small>
-      </blockquote>
-    </div>
-  <% end %>
-</div>
