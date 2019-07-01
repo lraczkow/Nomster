@@ -7,14 +7,12 @@
   <% @place.photos.each do |photo| %>
     <div class="col-12 col-sm-6">
       <blockquote>
-        <%= image_tag photo.picture.url %>
+        <%= image_tag photo.picture.url, class: "photo-place" %>
         <%= photo.caption %>
         <small><%= photo.user.email %></small>
       </blockquote>
     </div>
   <% end %>
-
-
   </head>
   <body>
   <div id="map"></div>
@@ -47,15 +45,19 @@
   <% end %> 
 
   <br />
-
+  
   <div class="float-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newmodal">
+        Add a photo
+      </button>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
     <% end %>
   </div>
 </div>
 
+<br />
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -84,7 +86,7 @@
 <div class="col-10 offset-1">
   <h1 class="float-left">Comments</h1>
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">
     Add a comment
   </button>
 </div>
@@ -93,7 +95,7 @@
 
 <div class="row">
   <% @place.comments.each do |comment| %>
-    <div class="col-12 col-sm-6">
+    <div class="col-12 col-sm-6 offset-1">
       <blockquote>
         <% if comment.humanized_rating.present? %>
           <b><%= comment.humanized_rating %></b> -
@@ -130,11 +132,5 @@
   </div>
 </div>
 
-<div class="col-8 offset-1">
-  <h1 class="float-left">Photos</h1>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#newmodal">
-    Add a photo
-  </button>
-</div>
+
 

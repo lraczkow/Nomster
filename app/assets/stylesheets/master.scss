@@ -54,10 +54,11 @@ body {
 
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
+  box-shadow: 3px 4px 2px 0px #adabab;
+  color: #c56758;
 }
 
 blockquote:before {
@@ -73,11 +74,19 @@ blockquote p {
   display: inline;
 }
 
+img.photo-place {
+  width: 250px;
+  height: auto;
+}
+.btn-primary {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .will_paginate {
   text-align: center;
   padding: 20px;
   cursor: default;
-  font-family: 'quicksandregular', cursive;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
 }
